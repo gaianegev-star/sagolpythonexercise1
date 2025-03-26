@@ -23,8 +23,8 @@ def compare_subjects_within_student(subj1_all_students, subj2_all_students):
         set(subj1_all_students[0]).intersection(subj2_all_students[0]))
     
     #create a dictionary to contain the nested data per student
-    num_of_subj = 2
-    num_of_exams = 2
+    num_of_subj = len(inspect.signature(compare_subjects_within_student).parameters)
+    num_of_exams = 2  # assuming each subject has 2 exams
     grades = {}
     
     for student in student_list:
