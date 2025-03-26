@@ -32,15 +32,9 @@ def compare_subjects_within_student(subj1_all_students, subj2_all_students):
         for subj in range(num_of_subj):
             grades[student][f"subj{subj+1}"] = {}
             for exam in range(num_of_exams):
-                input_name = f"subj{subj}_all_students"
-                exam_idx = input_name[0].index(student)
-                grades[student][f"subj{subj+1}"][f"exam{exam+1}"] = input_name[exam+1][exam_idx]
-                # if subj == 0:
-                #     exam_idx = subj1_all_students[0].index(student)
-                #     grades[student][f"subj{subj+1}"][f"exam{exam+1}"] = subj1_all_students[exam+1][exam_idx]
-                # else:
-                #     exam_idx = subj2_all_students[0].index(student)
-                #     grades[student][f"subj{subj+1}"][f"exam{exam+1}"] = subj2_all_students[exam+1][exam_idx]
+                current_subject = [subj1_all_students, subj2_all_students][subj]
+                exam_idx = current_subject[0].index(student)
+                grades[student][f"subj{subj+1}"][f"exam{exam+1}"] = current_subject[exam+1][exam_idx]
     
     print(grades)
 
