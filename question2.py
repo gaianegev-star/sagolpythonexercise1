@@ -24,6 +24,7 @@ def compare_subjects_within_student(subj1_all_students, subj2_all_students):
     
     #create a dictionary to contain the nested data per student
     num_of_subj = len(inspect.signature(compare_subjects_within_student).parameters)
+    print(num_of_subj)
     num_of_exams = 2  # assuming each subject has 2 exams
     grades = {}
     
@@ -41,6 +42,8 @@ def compare_subjects_within_student(subj1_all_students, subj2_all_students):
 # test 
 charms_all_students = [["ron", "harry", "hermione", "neville", "draco"] , [80, 90, 100,40,90] , [75, 95, 100 , 70, 95] ]
 divination_all_students = [["ron", "harry", "hermione", "draco"], [60, 70, 100,60], [75, 95, 100,65]]
+herbology_all_students = [["ron", "harry", "hermione", "draco"], [90, 0, 100,90], [95, 95, 100,95]]
+
 compare_subjects_within_student(
     charms_all_students,
     divination_all_students, 
