@@ -42,7 +42,7 @@ def compare_subjects_within_student(subj1_all_students, subj2_all_students):
     for student in grades:
         for subj in range(num_of_subj):
           best_grade_in_subj = max(grades[student][f"subj{subj+1}"].values())
-          print(best_grade_in_subj)
+          print(f"{student}: {best_grade_in_subj}")
                 
   
 
