@@ -14,8 +14,8 @@ inputs = [
   'bbcCdd',
 ]
 
-for inp in inputs:
-  print(trifeca(inp))
+# for inp in inputs:
+#   print(trifeca(inp))
 
 
 ##############
