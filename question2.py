@@ -40,9 +40,11 @@ def compare_subjects_within_student(subj1_all_students, subj2_all_students):
 
     #find the highet grade and return the student and subject
     for student in grades:
+        max_grades = []
         for subj in range(num_of_subj):
-          best_grade_in_subj = max(grades[student][f"subj{subj+1}"].values())
-          print(f"{student}: {best_grade_in_subj}")
+            best_grade_in_subj = max(grades[student][f"subj{subj+1}"].values())
+            max_grades.append(best_grade_in_subj)
+        print(f"{student}'s highest grade overall: {max(max_grades)}")
                 
   
 
