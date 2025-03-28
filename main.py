@@ -30,7 +30,6 @@ charms_all_students = [["Ron", "Harry", "Hermione", "Neville", "Draco"],
 divination_all_students = [["Ron", "Harry", "Hermione", "Draco"],
                            [60, 70, 100, 60], [95, 95, 100, 65]]
 
-print("\nQuestion 2 results:")
 print(
   compare_subjects_within_student(
       charms_all_students,
@@ -41,5 +40,4 @@ print(
 # Question 3 #
 ##############
 
-print("\nQuestion 3 results:")
 complicated_palindrome()
