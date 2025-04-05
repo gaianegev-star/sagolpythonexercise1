@@ -10,9 +10,9 @@ def compare_subjects_within_student(subj1_all_students: dict,
     ----------
     subj1_all_students, subj2_all_students
         2 dictionaries, each contains the grades of all students in a given subject.
-        First column - students' names
-        Second column - grades in the first exam
-        Third column - grades in the second exam
+        Key - students' names
+        Value - a tuple containing the grades of the first and second exam
+        
 
     Returns
     -------
