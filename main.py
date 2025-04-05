@@ -1,6 +1,6 @@
 from question1 import trifeca
 from question2 import compare_subjects_within_student
-from question3 import complicated_palindrome
+from question3 import check_palindrome
 
 ##############
 # Question 1 #
@@ -16,8 +16,8 @@ inputs = [
   '001122'
 ]
 
-# for inp in inputs:
-#   print(trifeca(inp))
+for inp in inputs:
+  print(trifeca(inp))
 
 
 ##############
@@ -25,10 +25,21 @@ inputs = [
 ##############
 
 # test
-charms_all_students = [["Ron", "Harry", "Hermione", "Neville", "Draco"],
-                       [80, 90, 100, 40, 80], [75, 95, 100, 70, 85]]
-divination_all_students = [["Ron", "Harry", "Hermione", "Draco"],
-                           [60, 70, 100, 60], [95, 95, 100, 65]]
+charms_all_students = {
+    "Ron": (80, 75),
+    "Harry": (90, 95),
+    "Hermione": (100, 100),
+    "Neville": (40, 70),
+    "Draco": (80, 85)
+}
+
+divination_all_students = {
+    "Ron": (60, 95),
+    "Harry": (70, 95),
+    "Hermione": (100, 100),
+    "Draco": (60, 65)
+}
+
 
 print(
   compare_subjects_within_student(
@@ -40,4 +51,4 @@ print(
 # Question 3 #
 ##############
 
-complicated_palindrome()
+check_palindrome()

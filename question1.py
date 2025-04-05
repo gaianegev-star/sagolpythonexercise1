@@ -1,6 +1,6 @@
-def equal_pair(word: str, index: int) -> bool:
-    """Helper function to check if two consecutive letters at the given index form a double pair."""
-    return word[index] == word[index + 1]
+# def equal_pair(word: str, index: int) -> bool:
+#     """Helper function to check if two consecutive letters at the given index form a double pair."""
+#     return word[index] == word[index + 1]
 
 
 def trifeca(word: str) -> bool:
@@ -17,31 +17,13 @@ def trifeca(word: str) -> bool:
         True if three consecutive double-letter pairs were found,
         False otherwise
     """
-    # Ensure there's enough length to check three consecutive double pairs
+    # Ensure there's enough length to contain three consecutive double pairs (6 characters)
     if len(word) < 6:
         return False
 
-    # Iterate through the string, checking for three consecutive double-letter pairs
-    for i in range(0,
-                   len(word) - 5,
-                   2):  # We go till len(word) - 5 to avoid index out of range
-        # Check if three consecutive double pairs exist in the substring starting at index i
-        if all(equal_pair(word, i + j)
-               for j in range(0, 6, 2)):  # Checks i, i+2, and i+4
-            return True  # Return True as soon as we find the triple pair
+    for i in range(0, len(word) - 5):  # range limited to len(word) - 5 to avoid index out of range
+        if all(word[i+j] == word[i+j+1]
+               for j in range(0, 6, 2)):  # Checks identical pairs for i, i+2, and i+4
+            return True  
 
-    return False  # No consecutive double pairs found
-
-
-inputs = [
-    'aabbcc',  #true
-    'abccddee0123',  #ture
-    'llkkbmm',  #false
-    'aaaazz',  #true
-    'bbcCdd',  #false
-    '0012',  #false
-    '001122'  #true
-]
-
-for inp in inputs:
-    print(trifeca(inp))
+    return False  
